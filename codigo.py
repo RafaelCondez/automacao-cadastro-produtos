@@ -3,6 +3,7 @@ import time
 
 link = 'https://dlp.hashtagtreinamentos.com/python/intensivao/login'
 
+# Abre o navegador e acessa o site
 pyautogui.PAUSE = 0.5
 pyautogui.press('win')
 pyautogui.write('opera')
@@ -11,6 +12,7 @@ pyautogui.write(link)
 pyautogui.press('enter')
 time.sleep(3)
 
+# Realiza login automático no sistema
 pyautogui.click(x=668, y=456)
 pyautogui.write('treinamento123@hotmail.com')
 pyautogui.press('tab')
@@ -26,8 +28,8 @@ base_dir = os.path.dirname(__file__)
 csv_path = os.path.join(base_dir, 'produtos.csv')
 
 tabela = pandas.read_csv(csv_path)
-print(tabela)
 
+# Preenche o forulário linha por linha do arquivo "produtos"
 for linha in tabela.index: 
     pyautogui.click(x=671, y=292)
     
@@ -62,5 +64,6 @@ for linha in tabela.index:
    
     pyautogui.press('enter')
     pyautogui.scroll(5000)
+
 
         
